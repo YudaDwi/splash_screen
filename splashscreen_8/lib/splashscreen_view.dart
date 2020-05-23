@@ -9,7 +9,6 @@ class SplashScreenPage extends StatefulWidget {
 }
 
 class _SplashScreenPageState extends State<SplashScreenPage> {
-  
   @override
   void initState() {
     super.initState();
@@ -17,7 +16,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   }
 
   startSplashScreen() async {
-    var duration = const Duration(seconds: 5);
+    var duration = const Duration(seconds: 3);
     return Timer(duration, () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
         return HomePage();
@@ -25,16 +24,14 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     });
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff329cef),
-      body: Center(
-        child: Image.asset(
-          'assets/img/logo.png',
-          width: 200.0,
-          height: 100.0,
-        ),
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[Image.asset('assets/img/logo1.png')],
       ),
     );
   }
